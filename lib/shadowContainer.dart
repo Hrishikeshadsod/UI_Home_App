@@ -5,37 +5,39 @@ class ShadowContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height:95,
+      width:95,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
-            color: Colors.blueGrey,
+            color: Color(0xFFE7E7E7),
             offset: Offset(
-              0,
-              3.0,
+              2,
+              2.0,
             ),
-            blurRadius: 10.0,
-            spreadRadius: 3.0,
+            blurRadius: 30.0,
+            spreadRadius: 5.0,
           ),
         ],
       ),
+
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            height: 20,
-          ),
+
           Expanded(
-            flex: 1,
+            flex: 3,
             child: Image.asset(
               "assets/images/fire.jpg",
-              height: 40,
-              width: 40,
+              height: 60,
+              width: 60,
               fit: BoxFit.fitWidth,
             ),
           ),
+
           Expanded(
             flex: 2,
             child: Text(

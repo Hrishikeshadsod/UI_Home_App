@@ -10,6 +10,8 @@ class LivingRoomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+     /* height:180,
+      width: 120,*/
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
