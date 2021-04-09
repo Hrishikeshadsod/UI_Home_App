@@ -17,38 +17,41 @@ class _LivingRoomState extends State<LivingRoom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+              'Living Room',
+              style: TextStyle(
+                color:Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.w900,
+              ),
+
+            ),
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_sharp),
+          color: Colors.black,
+          iconSize:25 ,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        shadowColor:Colors.white,
+       backgroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: Padding(
           //To separate app content from all sides of screen
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(15),
           //Column for different widgets
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
+             /* Expanded(
                 flex: 1,
                 //first row on the screen
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      CupertinoIcons.arrow_left,
-                      size: 20,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Living Room',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+
+              ),*/
               Expanded(
                 flex: 7,
                 //second row with the temperature slider
@@ -62,7 +65,7 @@ class _LivingRoomState extends State<LivingRoom> {
                         children: <Widget>[
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(left: 33, right: 33),
+                              margin: EdgeInsets.only(left: 17, right: 17),
                               decoration: BoxDecoration(
                                 color: Color(0XFFF0F9FC),
                                 borderRadius: BorderRadius.circular(170.0),
@@ -71,66 +74,74 @@ class _LivingRoomState extends State<LivingRoom> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
+                                  SizedBox(
+                                    height: 20,
+                                  ),
                                   Expanded(
-                                    flex: 7,
+                                    flex: 8,
                                     child: CircleAvatar(
-                                      radius: 137,
-                                      backgroundColor: Color(0XFFE57DA1),
+                                      radius: 157,
+                                      /*backgroundColor: Color(0XFFE57DA1),
                                       child: CircleAvatar(
                                         radius: 117,
-                                        backgroundColor: Colors.white,
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            SizedBox(
-                                              height: 40,
-                                            ),
-                                            Expanded(
-                                              flex: 4,
-                                              child: Text(
-                                                '$temp°c',
-                                                style: TextStyle(
-                                                  fontSize: 60,
-                                                  fontWeight: FontWeight.w700,
-                                                  color: Colors.black,
+                                        backgroundColor: Colors.white,*/
+                                      backgroundImage:AssetImage('assets/images/clock.JPG'),
+                                        child: CircleAvatar(
+                                          radius: 87,
+                                          backgroundColor:Colors.white ,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              SizedBox(
+                                                height: 30,
+                                              ),
+                                              Expanded(
+                                                flex: 4,
+                                                child: Text(
+                                                  '$temp°c',
+                                                  style: TextStyle(
+                                                    fontSize: 60,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Expanded(
-                                              flex: 1,
-                                              child: Text(
-                                                'Room',
-                                                style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.black,
+                                              Expanded(
+                                                flex: 1,
+                                                child: Text(
+                                                  'Room',
+                                                  style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            Expanded(
-                                              flex: 1,
-                                              child: Text(
-                                                'Temperature',
-                                                style: TextStyle(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.black,
+                                              Expanded(
+                                                flex: 1,
+                                                child: Text(
+                                                  'Temperature',
+                                                  style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.black,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 40,
-                                            ),
-                                          ],
+                                              SizedBox(
+                                                height: 20,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
+
                                   Expanded(
-                                    flex: 2,
+                                    flex: 3,
                                     child: Padding(
-                                      padding: EdgeInsets.all(10),
+                                      padding: EdgeInsets.all(20),
                                       child: Container(
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -145,7 +156,7 @@ class _LivingRoomState extends State<LivingRoom> {
                                             activeTrackColor: Color(0XFFE0F7F7),
                                             thumbColor: Colors.black,
                                             thumbShape: RoundSliderThumbShape(
-                                                enabledThumbRadius: 15.0),
+                                                enabledThumbRadius: 20.0),
                                             overlayShape:
                                                 RoundSliderOverlayShape(
                                                     overlayRadius: 30.0),
@@ -164,6 +175,7 @@ class _LivingRoomState extends State<LivingRoom> {
                                       ),
                                     ),
                                   ),
+
                                   Expanded(
                                     flex: 2,
                                     child: Text(
@@ -174,10 +186,7 @@ class _LivingRoomState extends State<LivingRoom> {
                                       ),
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: SizedBox(),
-                                  )
+
                                 ],
                               ),
                             ),
@@ -220,34 +229,42 @@ class _LivingRoomState extends State<LivingRoom> {
               Expanded(
                 flex: 2,
                 //third row
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                      child: LivingRoomCard(
-                        colour: Color(0XFFE9E7F7),
-                        icon: "assets/images/light.png",
-                        label: 'Light',
-                        label2: 'On',
+                child: Padding(
+                  padding:EdgeInsets.only(left:15.0,right:15,bottom: 5 ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        flex:5,
+                        child: LivingRoomCard(
+                          colour: Color(0XFFE9E7F7),
+                          icon: "assets/images/light.png",
+                          label: 'Light',
+                          label2: 'On',
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: LivingRoomCard(
-                        colour: Color(0XFFFAEBE8),
-                        icon: 'assets/images/cooler.png',
-                        label: 'Cooler',
-                        label2: 'Off',
+
+                      Expanded(
+                        flex:5,
+                        child: LivingRoomCard(
+                          colour: Color(0XFFFAEBE8),
+                          icon: 'assets/images/cooler.png',
+                          label: 'Cooler',
+                          label2: 'Off',
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: LivingRoomCard(
-                        colour: Color(0XFFE7F7F1),
-                        icon: "assets/images/tv.jpg",
-                        label: 'Smart TV',
-                        label2: 'Off',
+
+                      Expanded(
+                        flex:5,
+                        child: LivingRoomCard(
+                          colour: Color(0XFFE7F7F1),
+                          icon: "assets/images/tv.jpg",
+                          label: 'Smart TV',
+                          label2: 'Off',
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

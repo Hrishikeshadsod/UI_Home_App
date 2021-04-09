@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 // returning a container required in Living Room screen with fire symbol and the percentage
 class ShadowContainer extends StatelessWidget {
   int fire = 26;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height:95,
-      width:95,
+      height: 95,
+      width: 95,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         color: Colors.white,
@@ -23,11 +24,9 @@ class ShadowContainer extends StatelessWidget {
           ),
         ],
       ),
-
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-
           Expanded(
             flex: 3,
             child: Image.asset(
@@ -37,16 +36,30 @@ class ShadowContainer extends StatelessWidget {
               fit: BoxFit.fitWidth,
             ),
           ),
-
           Expanded(
             flex: 2,
-            child: Text(
-              '$fire %',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w800,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '$fire',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                Text(
+                  ' %',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
             ),
+          ),
+          SizedBox(
+            height: 6,
           ),
         ],
       ),

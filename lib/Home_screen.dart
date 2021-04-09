@@ -6,6 +6,7 @@ import 'REUSABLE_CARD.dart';
 import 'icon_content.dart';
 import 'package:flutter_emoji/flutter_emoji.dart';
 
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -17,11 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 20,),
           child: Column(
             //crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
+                flex: 1,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -46,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Expanded(
+                flex:1,
                 child: Row(
                   //mainAxisAlignment: MainAxisAlignment.center,
 
@@ -67,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Expanded(
+                flex:1,
                 child: Row(
                   children: <Widget>[
                     Text(
@@ -80,166 +85,190 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Your ',
-                      style: TextStyle(
-                        fontSize: 38.0,
-                        fontWeight: FontWeight.w300,
+                flex:1,
+                child: Padding(
+                  padding: const EdgeInsets.only(top:3,bottom: 3,left: 10,right: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Your ',
+                        style: TextStyle(
+                          fontSize: 38.0,
+                          fontWeight: FontWeight.w300,
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Rooms',
-                      style: TextStyle(
-                        fontSize: 38.0,
-                        fontWeight: FontWeight.w800,
+                      Text(
+                        'Rooms',
+                        style: TextStyle(
+                          fontSize: 38.0,
+                          fontWeight: FontWeight.w800,
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: SizedBox(
-                        width: 5,
+                      Expanded(
+                        child: SizedBox(
+                          width: 5,
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.all(2),
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Add',
-                                style: TextStyle(
-                                  color: Color(0XFFA0DBD6),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              CircleAvatar(
-                                child: Center(
-                                  child: Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                    size: 15,
+                      Expanded(
+                        child: Container(
+
+                          padding: EdgeInsets.all(2),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Add',
+                                  style: TextStyle(
+                                    color: Color(0XFF52B4A8),
                                   ),
                                 ),
-                                radius: 10,
-                                backgroundColor: Color(0XFF52B4A8),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                CircleAvatar(
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                      size: 15,
+                                    ),
+                                  ),
+                                  radius: 10,
+                                  backgroundColor: Color(0XFF52B4A8),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        decoration: BoxDecoration(
-                          color: Color(0XFFE1F8F6),
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                  flex: 4,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: ReusableCard(
-                          colour: Color(0XFFECC8D0),
-                          cardChild: IconContent(
-                            icon: "assets/images/sofa.jpg",
-                            label: 'Living Room',
-                            label1: 5,
-                          ),
-                          onPress: () {
-                            setState(() {});
-                            _navigateAndDisplaySelection(context);
-                          },
-                        ),
-                      ),
-                      Expanded(
-                        child: ReusableCard(
-                          onPress: () {
-                            setState(() {});
-                          },
-                          colour: Color(0XFFFAF3E1),
-                          cardChild: IconContent(
-                            icon: "assets/images/kitchen.jpg",
-                            label: 'Kitchen',
-                            label1: 4,
+                          decoration: BoxDecoration(
+                            color: Color(0XFFE1F8F6),
+                            borderRadius: BorderRadius.circular(20.0),
                           ),
                         ),
                       ),
                     ],
-                  )),
-              Expanded(
-                flex: 4,
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: ReusableCard(
-                        colour: Color(0XFFE9E6F7),
-                        cardChild: IconContent(
-                          icon: "assets/images/office.jpg",
-                          label: 'Office',
-                          label1: 10,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ReusableCard(
-                        onPress: () {
-                          setState(() {
-                            ;
-                          });
-                        },
-                        colour: Color(0XFFD0EDF5),
-                        cardChild: IconContent(
-                          icon: "assets/images/bedroom.jpg",
-                          label: 'Bedroom',
-                          label1: 6,
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
-              Expanded(
-                  flex: 4,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Expanded(
-                        child: ReusableCard(
-                          colour: Color(0XFFFAEAE7),
-                          cardChild: IconContent(
-                            icon: "assets/images/bathroom.jpg",
-                            label: 'Bathroom',
-                            label1: 7,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: ReusableCard(
-                          onPress: () {
-                            setState(() {
-                              ;
-                            });
-                          },
-                          colour: Color(0XFFEFF6E4),
-                          cardChild: IconContent(
-                            icon: "assets/images/dining.jpg",
-                            label: 'Dining Room',
-                            label1: 4,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )),
+
+             Expanded(
+               flex: 12,
+                 child:Column(
+                   children: <Widget>[
+                     Expanded(
+                         flex: 4,
+                         child: Padding(
+                           padding: EdgeInsets.only(left: 15,right: 15),
+                           child: Row(
+                             children: <Widget>[
+                               Expanded(
+                                 child: ReusableCard(
+                                   colour: Color(0XFFECC8D0),
+                                   cardChild: IconContent(
+                                     icon: "assets/images/sofa.jpg",
+                                     label: 'Living Room',
+                                     label1: 5,
+                                   ),
+                                   onPress: () {
+                                     setState(() {});
+                                     _navigateAndDisplaySelection(context);
+                                   },
+                                 ),
+                               ),
+                               Expanded(
+                                 child: ReusableCard(
+                                   onPress: () {
+                                     setState(() {});
+                                   },
+                                   colour: Color(0XFFFAF3E1),
+                                   cardChild: IconContent(
+                                     icon: "assets/images/kitchen.jpg",
+                                     label: 'Kitchen',
+                                     label1: 4,
+                                   ),
+                                 ),
+                               ),
+                             ],
+                           ),
+                         )),
+                     Expanded(
+                       flex: 4,
+                       child: Padding(
+                         padding: const EdgeInsets.only(left: 15,right: 15),
+                         child: Row(
+                           children: <Widget>[
+                             Expanded(
+                               child: ReusableCard(
+                                 colour: Color(0XFFE9E6F7),
+                                 cardChild: IconContent(
+                                   icon: "assets/images/office.jpg",
+                                   label: 'Office',
+                                   label1: 10,
+                                 ),
+                               ),
+                             ),
+                             Expanded(
+                               child: ReusableCard(
+                                 onPress: () {
+                                   setState(() {
+                                     ;
+                                   });
+                                 },
+                                 colour: Color(0XFFD0EDF5),
+                                 cardChild: IconContent(
+                                   icon: "assets/images/bedroom.jpg",
+                                   label: 'Bedroom',
+                                   label1: 6,
+                                 ),
+                               ),
+                             ),
+                           ],
+                         ),
+                       ),
+                     ),
+                     Expanded(
+                       flex: 4,
+                       child: Padding(
+                         padding: const EdgeInsets.only(left: 15,right: 15),
+                         child: Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           crossAxisAlignment: CrossAxisAlignment.stretch,
+                           children: <Widget>[
+                             Expanded(
+                               child: ReusableCard(
+                                 colour: Color(0XFFFAEAE7),
+                                 cardChild: IconContent(
+                                   icon: "assets/images/bathroom.jpg",
+                                   label: 'Bathroom',
+                                   label1: 7,
+                                 ),
+                               ),
+                             ),
+                             Expanded(
+                               child: ReusableCard(
+                                 onPress: () {
+                                   setState(() {
+                                     ;
+                                   });
+                                 },
+                                 colour: Color(0XFFEFF6E4),
+                                 cardChild: IconContent(
+                                   icon: "assets/images/dining.jpg",
+                                   label: 'Dining Room',
+                                   label1: 4,
+                                 ),
+                               ),
+                             ),
+                           ],
+                         ),
+                       ),
+                     ),
+                   ],
+                 ),
+
+             ),
             ],
           ),
         ),
