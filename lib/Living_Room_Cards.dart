@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // To design all the containers present in the living room screen
 class LivingRoomCard extends StatelessWidget {
@@ -31,10 +32,12 @@ class LivingRoomCard extends StatelessWidget {
           ),
           Text(
             label,
-            style: TextStyle(
+            style:GoogleFonts.quicksand(
+              textStyle: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.w900,
               color: Colors.black,
+            ),
             ),
           ),
           SizedBox(
@@ -42,12 +45,14 @@ class LivingRoomCard extends StatelessWidget {
           ),
           Text(
             label2,
-            style: TextStyle(
+            style: GoogleFonts.quicksand(
+              textStyle:TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.w600,
               color: Colors.black,
             ),
-          )
+          ),
+          ),
         ],
       ),
       margin: EdgeInsets.all(5.0),

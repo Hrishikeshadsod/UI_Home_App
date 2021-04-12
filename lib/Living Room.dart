@@ -5,6 +5,7 @@ import 'Living_Room_Cards.dart';
 import 'REUSABLE_CARD.dart';
 import 'icon_content.dart';
 import 'shadowContainer.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LivingRoom extends StatefulWidget {
   double temp = 26;
@@ -17,27 +18,29 @@ class _LivingRoomState extends State<LivingRoom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-              'Living Room',
-              style: TextStyle(
-                color:Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.w900,
-              ),
-
+          'Living Room',
+          style: GoogleFonts.quicksand(
+            textStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 23,
+              fontWeight: FontWeight.w900,
             ),
+          ),
+        ),
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_sharp),
           color: Colors.black,
-          iconSize:25 ,
+          iconSize: 25,
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        shadowColor:Colors.white,
-       backgroundColor: Colors.white,
+        shadowColor: Colors.white,
+        backgroundColor: Colors.white,
       ),
       body: SafeArea(
         child: Padding(
@@ -47,7 +50,7 @@ class _LivingRoomState extends State<LivingRoom> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-             /* Expanded(
+              /* Expanded(
                 flex: 1,
                 //first row on the screen
 
@@ -85,59 +88,63 @@ class _LivingRoomState extends State<LivingRoom> {
                                       child: CircleAvatar(
                                         radius: 117,
                                         backgroundColor: Colors.white,*/
-                                      backgroundImage:AssetImage('assets/images/clock.JPG'),
-                                        child: CircleAvatar(
-                                          radius: 87,
-                                          backgroundColor:Colors.white ,
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: <Widget>[
-                                              SizedBox(
-                                                height: 30,
-                                              ),
-                                              Expanded(
-                                                flex: 4,
-                                                child: Text(
-                                                  '$temp°c',
-                                                  style: TextStyle(
-                                                    fontSize: 60,
-                                                    fontWeight: FontWeight.w700,
-                                                    color: Colors.black,
-                                                  ),
+                                      backgroundImage:
+                                          AssetImage('assets/images/clock.JPG'),
+                                      child: CircleAvatar(
+                                        radius: 87,
+                                        backgroundColor: Colors.white,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            SizedBox(
+                                              height: 30,
+                                            ),
+                                            Expanded(
+                                              flex: 4,
+                                              child: Text(
+                                                '$temp°c',
+                                                style: TextStyle(
+                                                  fontSize: 60,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: Colors.black,
                                                 ),
                                               ),
-                                              Expanded(
-                                                flex: 1,
-                                                child: Text(
-                                                  'Room',
-                                                  style: TextStyle(
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: Colors.black,
-                                                  ),
+                                            ),
+                                            Expanded(
+                                              flex: 1,
+                                              child: Text(
+                                                'Room',
+                                                style: GoogleFonts.quicksand(
+                                                  textStyle:TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.black,
+                                                ),
                                                 ),
                                               ),
-                                              Expanded(
-                                                flex: 1,
-                                                child: Text(
-                                                  'Temperature',
-                                                  style: TextStyle(
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.w500,
-                                                    color: Colors.black,
-                                                  ),
+                                            ),
+                                            Expanded(
+                                              flex: 1,
+                                              child: Text(
+                                                'Temperature',
+                                                style:GoogleFonts.quicksand(
+                                                  textStyle: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.black,
+                                                ),
                                                 ),
                                               ),
-                                              SizedBox(
-                                                height: 20,
-                                              ),
-                                            ],
-                                          ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
-
+                                  ),
                                   Expanded(
                                     flex: 3,
                                     child: Padding(
@@ -175,18 +182,18 @@ class _LivingRoomState extends State<LivingRoom> {
                                       ),
                                     ),
                                   ),
-
                                   Expanded(
                                     flex: 2,
                                     child: Text(
                                       'Room Temperature',
-                                      style: TextStyle(
+                                      style: GoogleFonts.quicksand(
+                                        textStyle:TextStyle(
                                         fontWeight: FontWeight.w900,
                                         fontSize: 15,
                                       ),
+                                      ),
                                     ),
                                   ),
-
                                 ],
                               ),
                             ),
@@ -218,10 +225,12 @@ class _LivingRoomState extends State<LivingRoom> {
                   children: <Widget>[
                     Text(
                       'Devices',
-                      style: TextStyle(
+                      style: GoogleFonts.quicksand(
+                        textStyle:TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w800,
                       ),
+                    ),
                     ),
                   ],
                 ),
@@ -230,12 +239,12 @@ class _LivingRoomState extends State<LivingRoom> {
                 flex: 2,
                 //third row
                 child: Padding(
-                  padding:EdgeInsets.only(left:15.0,right:15,bottom: 5 ),
+                  padding: EdgeInsets.only(left: 15.0, right: 15, bottom: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Expanded(
-                        flex:5,
+                        flex: 5,
                         child: LivingRoomCard(
                           colour: Color(0XFFE9E7F7),
                           icon: "assets/images/light.png",
@@ -243,9 +252,8 @@ class _LivingRoomState extends State<LivingRoom> {
                           label2: 'On',
                         ),
                       ),
-
                       Expanded(
-                        flex:5,
+                        flex: 5,
                         child: LivingRoomCard(
                           colour: Color(0XFFFAEBE8),
                           icon: 'assets/images/cooler.png',
@@ -253,9 +261,8 @@ class _LivingRoomState extends State<LivingRoom> {
                           label2: 'Off',
                         ),
                       ),
-
                       Expanded(
-                        flex:5,
+                        flex: 5,
                         child: LivingRoomCard(
                           colour: Color(0XFFE7F7F1),
                           icon: "assets/images/tv.jpg",

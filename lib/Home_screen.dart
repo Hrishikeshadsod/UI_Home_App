@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'REUSABLE_CARD.dart';
 import 'icon_content.dart';
-import 'package:flutter_emoji/flutter_emoji.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -56,9 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: <Widget>[
                     Text(
                       'Hi Sajon',
-                      style: TextStyle(
+                      style: GoogleFonts.quicksand(
+                        textStyle:TextStyle(
                         fontSize: 40.0,
                         fontWeight: FontWeight.w700,
+                      ),
                       ),
                     ),
                     Image.asset(
@@ -76,9 +78,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: <Widget>[
                     Text(
                       'Wellcome to Orix Home.',
-                      style: TextStyle(
+                      style: GoogleFonts.quicksand(
+                        textStyle:TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w700,
+                      ),
                       ),
                     ),
                   ],
@@ -93,16 +97,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Text(
                         'Your ',
-                        style: TextStyle(
+                        style:GoogleFonts.quicksand(
+                          textStyle: TextStyle(
                           fontSize: 38.0,
                           fontWeight: FontWeight.w300,
+                        ),
                         ),
                       ),
                       Text(
                         'Rooms',
-                        style: TextStyle(
+                        style: GoogleFonts.quicksand(
+                          textStyle:TextStyle(
                           fontSize: 38.0,
                           fontWeight: FontWeight.w800,
+                        ),
                         ),
                       ),
                       Expanded(
@@ -112,7 +120,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
                         child: Container(
-
                           padding: EdgeInsets.all(2),
                           child: Center(
                             child: Row(
@@ -121,8 +128,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 Text(
                                   'Add',
-                                  style: TextStyle(
+                                  style: GoogleFonts.quicksand(
+                                    textStyle:TextStyle(
+                                      fontWeight: FontWeight.w500,
                                     color: Color(0XFF52B4A8),
+                                  ),
                                   ),
                                 ),
                                 SizedBox(
@@ -144,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           decoration: BoxDecoration(
                             color: Color(0XFFE1F8F6),
-                            borderRadius: BorderRadius.circular(20.0),
+                            borderRadius: BorderRadius.circular(120.0),
                           ),
                         ),
                       ),
